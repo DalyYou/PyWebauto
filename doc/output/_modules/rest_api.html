@@ -1,0 +1,422 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rest_api &mdash; Webauto 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Webauto
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webauto.html">Webauto</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Webauto</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="index.html">Module code</a> &raquo;</li>
+        
+      <li>rest_api</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for rest_api</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd"># @Author   : DaoQ You</span>
+
+<span class="sd"># @File     : rest_api.py</span>
+
+<span class="sd"># @Project  : webauto</span>
+
+<span class="sd"># @Software : PyCharm Community Edition</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="c1"># !/usr/bin/python</span>
+<span class="c1"># -*- coding:utf-8 -*-</span>
+<span class="kn">import</span> <span class="nn">json</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">requests.packages.urllib3.exceptions</span> <span class="k">import</span> <span class="n">InsecureRequestWarning</span>
+<span class="kn">from</span> <span class="nn">request_data</span> <span class="k">import</span> <span class="n">RequestData</span>
+<span class="n">requests</span><span class="o">.</span><span class="n">packages</span><span class="o">.</span><span class="n">urllib3</span><span class="o">.</span><span class="n">disable_warnings</span><span class="p">(</span><span class="n">InsecureRequestWarning</span><span class="p">)</span>
+
+<div class="viewcode-block" id="RestAPI"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI">[docs]</a><span class="k">class</span> <span class="nc">RestAPI</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    Basic API Functions</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tenant_id</span><span class="p">,</span> <span class="n">host</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">tenant_id</span> <span class="o">=</span> <span class="n">tenant_id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">host</span> <span class="o">=</span> <span class="n">host</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">challenges</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">if</span> <span class="n">tenant_id</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">.</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">tenant_id</span><span class="p">,</span> <span class="n">host</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">host</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">headers</span> <span class="o">=</span> <span class="n">RequestData</span><span class="o">.</span><span class="n">get_header_data</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">cookies</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">auth_details</span> <span class="o">=</span> <span class="p">{}</span>
+
+<div class="viewcode-block" id="RestAPI.security_startauthentication"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI.security_startauthentication">[docs]</a>    <span class="k">def</span> <span class="nf">security_startauthentication</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">application_id</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mfa_requestor</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">version</span><span class="o">=</span><span class="s2">&quot;1.0&quot;</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        /Security/StartAuthentication</span>
+
+<span class="sd">        :param user: user name</span>
+
+<span class="sd">        :param application_id: applicaiton id, the default value is None</span>
+
+<span class="sd">        :param mfa_requestor: the mfa requestor, if no, the default value is None</span>
+
+<span class="sd">        :param version: The version number</span>
+
+<span class="sd">        :return: requests.post</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+
+        <span class="n">body</span> <span class="o">=</span> <span class="n">RequestData</span><span class="o">.</span><span class="n">get_start_auth_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tenant_id</span><span class="p">,</span> <span class="n">user</span><span class="p">,</span> <span class="n">application_id</span><span class="p">,</span> <span class="n">mfa_requestor</span><span class="p">,</span> <span class="n">version</span><span class="p">)</span>
+        <span class="n">post_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/Security/StartAuthentication&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">post_request</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="s1">&#39;SessionId&#39;</span> <span class="ow">in</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span> <span class="o">=</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">][</span><span class="s1">&#39;SessionId&#39;</span><span class="p">]</span>
+        <span class="k">if</span> <span class="n">post_request</span><span class="o">.</span><span class="n">ok</span> <span class="ow">and</span> <span class="s1">&#39;Challenges&#39;</span> <span class="ow">in</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">]:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">challenges</span> <span class="o">=</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">][</span><span class="s1">&#39;Challenges&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">post_request</span></div>
+
+<div class="viewcode-block" id="RestAPI.security_advanceauthentication"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI.security_advanceauthentication">[docs]</a>    <span class="k">def</span> <span class="nf">security_advanceauthentication</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="n">challenge_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mechanism_index</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">mechanism_id</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        /Security/AdvanceAuthentication</span>
+
+<span class="sd">        :param answer:</span>
+
+<span class="sd">        :param challenge_index:</span>
+
+<span class="sd">        :param mechanism_index:</span>
+
+<span class="sd">        :param mechanism_id:</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="n">mechanism_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">challenge_index</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mechanism_index</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotEnoughInformationToAdvanceAuthException</span><span class="p">(</span><span class="s2">&quot;A mechanism_id or a challenge_index and mechanism_index is required&quot;</span><span class="p">)</span>
+        <span class="k">elif</span> <span class="n">mechanism_id</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">challenge_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">mechanism_index</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">mechanism_id</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">challenges</span><span class="p">[</span><span class="n">challenge_index</span><span class="p">][</span><span class="s1">&#39;Mechanisms&#39;</span><span class="p">][</span><span class="n">mechanism_index</span><span class="p">][</span><span class="s1">&#39;MechanismId&#39;</span><span class="p">]</span>
+        <span class="k">elif</span> <span class="n">mechanism_id</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">raise</span> <span class="n">NotEnoughInformationToAdvanceAuthException</span><span class="p">(</span><span class="s2">&quot;Both a challenge_index and mechanism_index are required if either are to be used&quot;</span><span class="p">)</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">RequestData</span><span class="o">.</span><span class="n">get_advance_auth_data</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tenant_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">session_id</span><span class="p">,</span> <span class="n">mechanism_id</span><span class="p">,</span> <span class="n">answer</span><span class="p">,</span> <span class="n">persistentlogin</span><span class="o">=</span><span class="s2">&quot;True&quot;</span><span class="p">,</span> <span class="n">action</span><span class="o">=</span><span class="s2">&quot;Answer&quot;</span><span class="p">)</span>
+        <span class="n">post_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/Security/AdvanceAuthentication&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">post_request</span><span class="o">.</span><span class="n">ok</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">cookies</span> <span class="o">=</span> <span class="n">post_request</span><span class="o">.</span><span class="n">cookies</span>
+            <span class="n">result_summary</span> <span class="o">=</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">][</span><span class="s1">&#39;Summary&#39;</span><span class="p">]</span>
+            <span class="k">if</span> <span class="n">result_summary</span> <span class="o">==</span> <span class="s1">&#39;LoginSuccess&#39;</span><span class="p">:</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">auth_details</span> <span class="o">=</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">post_request</span></div>
+
+<div class="viewcode-block" id="RestAPI.security_logout"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI.security_logout">[docs]</a>    <span class="k">def</span> <span class="nf">security_logout</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">authorization</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        /Security/Logout</span>
+
+<span class="sd">        :param authorization:</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="k">if</span> <span class="n">authorization</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_details</span><span class="p">:</span>
+            <span class="n">authorization</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">auth_details</span><span class="p">[</span><span class="s1">&#39;Auth&#39;</span><span class="p">]</span>
+
+        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;Authorization&quot;</span><span class="p">:</span> <span class="n">authorization</span>
+        <span class="p">}</span>
+
+        <span class="n">post_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/Security/Logout&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cookies</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">post_request</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">post_request</span></div>
+
+<div class="viewcode-block" id="RestAPI.api_login"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI.api_login">[docs]</a>    <span class="k">def</span> <span class="nf">api_login</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">,</span> <span class="n">challenge_dict</span><span class="p">,</span> <span class="n">centrify_session</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        API login</span>
+
+<span class="sd">        :param username:</span>
+
+<span class="sd">        :param challenge_dict:</span>
+
+<span class="sd">        :param centrify_session:</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        challenge_dict = {</span>
+<span class="sd">            &#39;Password&#39;: password,</span>
+<span class="sd">            &#39;Security Question&#39;: {</span>
+<span class="sd">                &quot;What is the name of the road you grew up on?&quot;: &#39;Johnson Ave&#39;</span>
+<span class="sd">            }</span>
+<span class="sd">        }</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="c1"># Start the login process</span>
+        <span class="k">if</span> <span class="n">centrify_session</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="n">centrify_session</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">tenant_id</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">host</span><span class="p">)</span>
+        <span class="n">response</span> <span class="o">=</span> <span class="n">centrify_session</span><span class="o">.</span><span class="n">security_startauthentication</span><span class="p">(</span><span class="n">username</span><span class="p">)</span>
+
+        <span class="n">logged_in</span> <span class="o">=</span> <span class="kc">False</span>
+        <span class="c1"># To log in, we need to answer challenges until we get &quot;LoginSuccess&quot;</span>
+        <span class="k">for</span> <span class="n">challenge</span> <span class="ow">in</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">][</span><span class="s1">&#39;Challenges&#39;</span><span class="p">]:</span>
+            <span class="k">for</span> <span class="n">mechanism</span> <span class="ow">in</span> <span class="n">challenge</span><span class="p">[</span><span class="s1">&#39;Mechanisms&#39;</span><span class="p">]:</span>
+                <span class="n">mech_id</span> <span class="o">=</span> <span class="n">mechanism</span><span class="p">[</span><span class="s1">&#39;MechanismId&#39;</span><span class="p">]</span>
+                <span class="n">current_step</span> <span class="o">=</span> <span class="n">mechanism</span><span class="p">[</span><span class="s1">&#39;PromptSelectMech&#39;</span><span class="p">]</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Current step is: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_step</span><span class="p">))</span>
+                <span class="n">answer</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+                <span class="c1"># search through our challenge dictionary to see if we can answer the current challenge</span>
+                <span class="k">if</span> <span class="n">current_step</span> <span class="ow">in</span> <span class="n">challenge_dict</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="n">current_step</span> <span class="o">==</span> <span class="s2">&quot;Security Question&quot;</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="s2">&quot;MultipartMechanism&quot;</span> <span class="ow">in</span> <span class="n">mechanism</span><span class="p">:</span>
+                            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mechanism for current step: </span><span class="si">{mechanism}</span><span class="s2">&quot;</span><span class="p">)</span>
+                            <span class="k">for</span> <span class="n">multi_mech</span> <span class="ow">in</span> <span class="n">mechanism</span><span class="p">[</span><span class="s2">&quot;MultipartMechanism&quot;</span><span class="p">][</span><span class="s2">&quot;MechanismParts&quot;</span><span class="p">]:</span>
+                                <span class="k">if</span> <span class="n">multi_mech</span><span class="p">[</span><span class="s1">&#39;QuestionText&#39;</span><span class="p">]</span> <span class="ow">in</span> <span class="n">challenge_dict</span><span class="p">[</span><span class="n">current_step</span><span class="p">]:</span>
+                                    <span class="n">answer</span> <span class="o">=</span> <span class="n">challenge_dict</span><span class="p">[</span><span class="n">current_step</span><span class="p">][</span><span class="n">multi_mech</span><span class="p">[</span><span class="s1">&#39;QuestionText&#39;</span><span class="p">]]</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">answer</span> <span class="o">=</span> <span class="n">challenge_dict</span><span class="p">[</span><span class="n">current_step</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="n">answer</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Mechanism was in challenge dictionary, but the value was either empty or not found&quot;</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Unable to handle </span><span class="si">{}</span><span class="s2"> mechanism&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">current_step</span><span class="p">))</span>
+                <span class="c1"># Answer the challenge</span>
+                <span class="n">response</span> <span class="o">=</span> <span class="n">centrify_session</span><span class="o">.</span><span class="n">security_advanceauthentication</span><span class="p">(</span><span class="n">answer</span><span class="p">,</span> <span class="n">mechanism_id</span><span class="o">=</span><span class="n">mech_id</span><span class="p">)</span>
+                <span class="n">result_summary</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;Result&#39;</span><span class="p">][</span><span class="s1">&#39;Summary&#39;</span><span class="p">]</span>
+                <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Authentication step attempt resulted in: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">result_summary</span><span class="p">))</span>
+                <span class="k">if</span> <span class="n">result_summary</span> <span class="o">==</span> <span class="s1">&#39;LoginSuccess&#39;</span><span class="p">:</span>
+                    <span class="n">logged_in</span> <span class="o">=</span> <span class="kc">True</span>
+                    <span class="k">break</span>
+            <span class="k">if</span> <span class="n">logged_in</span> <span class="ow">is</span> <span class="kc">True</span><span class="p">:</span>
+                <span class="k">break</span>
+
+        <span class="k">if</span> <span class="n">logged_in</span> <span class="ow">is</span> <span class="kc">False</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Login failed&#39;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Login success&#39;</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">centrify_session</span></div>
+
+<div class="viewcode-block" id="RestAPI.query"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI.query">[docs]</a>    <span class="k">def</span> <span class="nf">query</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">script</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        Redrock Query</span>
+
+<span class="sd">        :param script:</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="n">RequestData</span><span class="o">.</span><span class="n">get_redrock_query_data</span><span class="p">(</span><span class="n">script</span><span class="p">)</span>
+        <span class="n">post_request</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/RedRock/query&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cookies</span><span class="p">,</span> <span class="n">verify</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">post_request</span><span class="o">.</span><span class="n">json</span><span class="p">()</span></div>
+
+<div class="viewcode-block" id="RestAPI.uprest_get_up_data"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.RestAPI.uprest_get_up_data">[docs]</a>    <span class="k">def</span> <span class="nf">uprest_get_up_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">username</span><span class="p">):</span>
+        <span class="sd">&#39;&#39;&#39;</span>
+<span class="sd">        /UPRest/GetUPData</span>
+
+<span class="sd">        :param username:</span>
+
+<span class="sd">        :return:</span>
+<span class="sd">        &#39;&#39;&#39;</span>
+        <span class="n">body</span> <span class="o">=</span> <span class="p">{</span>
+            <span class="s2">&quot;username&quot;</span><span class="p">:</span> <span class="n">username</span><span class="p">,</span>
+            <span class="s2">&quot;force&quot;</span><span class="p">:</span> <span class="s1">&#39;true&#39;</span>
+        <span class="p">}</span>
+
+        <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">post</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">url</span> <span class="o">+</span> <span class="s2">&quot;/UPRest/GetUPData&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">body</span><span class="p">),</span> <span class="n">headers</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">headers</span><span class="p">,</span> <span class="n">cookies</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">cookies</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">response</span></div></div>
+
+
+<div class="viewcode-block" id="AuthException"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.AuthException">[docs]</a><span class="k">class</span> <span class="nc">AuthException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    AuthException</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+<div class="viewcode-block" id="CookiesException"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.CookiesException">[docs]</a><span class="k">class</span> <span class="nc">CookiesException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    CookiesException</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+
+
+<div class="viewcode-block" id="NotEnoughInformationToAdvanceAuthException"><a class="viewcode-back" href="../webauto/rest_api.html#rest_api.NotEnoughInformationToAdvanceAuthException">[docs]</a><span class="k">class</span> <span class="nc">NotEnoughInformationToAdvanceAuthException</span><span class="p">(</span><span class="ne">Exception</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    NotEnoughInformationToAdvanceAuthException</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span></div>
+</pre></div>
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DaoQ You.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

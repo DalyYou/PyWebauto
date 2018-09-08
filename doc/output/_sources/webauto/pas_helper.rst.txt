@@ -1,0 +1,7 @@
+pas\_helper module
+==================
+
+.. automodule:: pas_helper
+    :members:
+    :undoc-members:
+    :show-inheritance:

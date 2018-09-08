@@ -1,0 +1,364 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rest_api module &mdash; Webauto 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="request_data module" href="request_data.html" />
+    <link rel="prev" title="Webauto" href="../webauto.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Webauto
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../webauto.html">Webauto</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Webauto</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../webauto.html">Webauto</a> &raquo;</li>
+        
+      <li>rest_api module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/webauto/rest_api.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-rest_api">
+<span id="rest-api-module"></span><h1>rest_api module<a class="headerlink" href="#module-rest_api" title="Permalink to this headline">¶</a></h1>
+<p># &#64;Author   : DaoQ You</p>
+<p># &#64;File     : rest_api.py</p>
+<p># &#64;Project  : webauto</p>
+<p># &#64;Software : PyCharm Community Edition</p>
+<dl class="exception">
+<dt id="rest_api.AuthException">
+<em class="property">exception </em><code class="descclassname">rest_api.</code><code class="descname">AuthException</code><a class="reference internal" href="../_modules/rest_api.html#AuthException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.AuthException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="rest_api.CookiesException">
+<em class="property">exception </em><code class="descclassname">rest_api.</code><code class="descname">CookiesException</code><a class="reference internal" href="../_modules/rest_api.html#CookiesException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.CookiesException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="exception">
+<dt id="rest_api.NotEnoughInformationToAdvanceAuthException">
+<em class="property">exception </em><code class="descclassname">rest_api.</code><code class="descname">NotEnoughInformationToAdvanceAuthException</code><a class="reference internal" href="../_modules/rest_api.html#NotEnoughInformationToAdvanceAuthException"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.NotEnoughInformationToAdvanceAuthException" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/exceptions.html#Exception" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">Exception</span></code></a></p>
+</dd></dl>
+
+<dl class="class">
+<dt id="rest_api.RestAPI">
+<em class="property">class </em><code class="descclassname">rest_api.</code><code class="descname">RestAPI</code><span class="sig-paren">(</span><em>tenant_id</em>, <em>host</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Basic API Functions</p>
+<dl class="method">
+<dt id="rest_api.RestAPI.api_login">
+<code class="descname">api_login</code><span class="sig-paren">(</span><em>username</em>, <em>challenge_dict</em>, <em>centrify_session=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI.api_login"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI.api_login" title="Permalink to this definition">¶</a></dt>
+<dd><p>API login</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>username</strong> – </li>
+<li><strong>challenge_dict</strong> – </li>
+<li><strong>centrify_session</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rest_api.RestAPI.query">
+<code class="descname">query</code><span class="sig-paren">(</span><em>script</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI.query"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI.query" title="Permalink to this definition">¶</a></dt>
+<dd><p>Redrock Query</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rest_api.RestAPI.security_advanceauthentication">
+<code class="descname">security_advanceauthentication</code><span class="sig-paren">(</span><em>answer</em>, <em>challenge_index=None</em>, <em>mechanism_index=None</em>, <em>mechanism_id=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI.security_advanceauthentication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI.security_advanceauthentication" title="Permalink to this definition">¶</a></dt>
+<dd><p>/Security/AdvanceAuthentication</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>answer</strong> – </li>
+<li><strong>challenge_index</strong> – </li>
+<li><strong>mechanism_index</strong> – </li>
+<li><strong>mechanism_id</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rest_api.RestAPI.security_logout">
+<code class="descname">security_logout</code><span class="sig-paren">(</span><em>authorization=None</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI.security_logout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI.security_logout" title="Permalink to this definition">¶</a></dt>
+<dd><p>/Security/Logout</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>authorization</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rest_api.RestAPI.security_startauthentication">
+<code class="descname">security_startauthentication</code><span class="sig-paren">(</span><em>user</em>, <em>application_id=None</em>, <em>mfa_requestor=None</em>, <em>version='1.0'</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI.security_startauthentication"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI.security_startauthentication" title="Permalink to this definition">¶</a></dt>
+<dd><p>/Security/StartAuthentication</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>user</strong> – user name</li>
+<li><strong>application_id</strong> – applicaiton id, the default value is None</li>
+<li><strong>mfa_requestor</strong> – the mfa requestor, if no, the default value is None</li>
+<li><strong>version</strong> – The version number</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">requests.post</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="rest_api.RestAPI.uprest_get_up_data">
+<code class="descname">uprest_get_up_data</code><span class="sig-paren">(</span><em>username</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/rest_api.html#RestAPI.uprest_get_up_data"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#rest_api.RestAPI.uprest_get_up_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>/UPRest/GetUPData</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>username</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="request_data.html" class="btn btn-neutral float-right" title="request_data module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../webauto.html" class="btn btn-neutral" title="Webauto" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DaoQ You.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

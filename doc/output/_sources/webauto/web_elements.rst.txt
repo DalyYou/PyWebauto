@@ -1,0 +1,7 @@
+web\_elements module
+====================
+
+.. automodule:: web_elements
+    :members:
+    :undoc-members:
+    :show-inheritance:

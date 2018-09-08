@@ -1,0 +1,7 @@
+centrify\_api module
+====================
+
+.. automodule:: centrify_api
+    :members:
+    :undoc-members:
+    :show-inheritance:

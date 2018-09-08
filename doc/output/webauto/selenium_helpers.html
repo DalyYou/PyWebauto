@@ -1,0 +1,999 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>selenium_helpers module &mdash; Webauto 1.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="web_log module" href="web_log.html" />
+    <link rel="prev" title="request_data module" href="request_data.html" /> 
+
+  
+  <script src="../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> Webauto
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../webauto.html">Webauto</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../webauto.html#api">API</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../webauto.html#web-ui">Web UI</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">selenium_helpers module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="web_log.html">web_log module</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Webauto</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+          <li><a href="../webauto.html">Webauto</a> &raquo;</li>
+        
+      <li>selenium_helpers module</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/webauto/selenium_helpers.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="module-selenium_helpers">
+<span id="selenium-helpers-module"></span><h1>selenium_helpers module<a class="headerlink" href="#module-selenium_helpers" title="Permalink to this headline">¶</a></h1>
+<p># &#64;Author   : DaoQ You</p>
+<p># &#64;File     : selenium_helpers.py</p>
+<p># &#64;Project  : webauto</p>
+<p># &#64;Software : PyCharm Community Edition</p>
+<dl class="class">
+<dt id="selenium_helpers.BrowserClient">
+<em class="property">class </em><code class="descclassname">selenium_helpers.</code><code class="descname">BrowserClient</code><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Basic functions defined here
+Including: initiate browser, get_profile,</p>
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.back">
+<em class="property">static </em><code class="descname">back</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.back"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.back" title="Permalink to this definition">¶</a></dt>
+<dd><p>Back the page</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.click">
+<code class="descname">click</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.click"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.click" title="Permalink to this definition">¶</a></dt>
+<dd><p>Click element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – WebElement</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.click_elements">
+<code class="descname">click_elements</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.click_elements"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.click_elements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Click elements</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – WebElement</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.close_currentwindow">
+<em class="property">static </em><code class="descname">close_currentwindow</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.close_currentwindow"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.close_currentwindow" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close current page</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.execute_script">
+<em class="property">static </em><code class="descname">execute_script</code><span class="sig-paren">(</span><em>script</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.execute_script"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.execute_script" title="Permalink to this definition">¶</a></dt>
+<dd><p>Execute the script on the browser</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>script</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.fill">
+<code class="descname">fill</code><span class="sig-paren">(</span><em>element</em>, <em>text</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.fill"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.fill" title="Permalink to this definition">¶</a></dt>
+<dd><p>Input text to the element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>element</strong> – WebElment</li>
+<li><strong>text</strong> – String</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.find_elements_by_xpath">
+<em class="property">static </em><code class="descname">find_elements_by_xpath</code><span class="sig-paren">(</span><em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.find_elements_by_xpath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.find_elements_by_xpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Find elements by xpath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>path</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.forward">
+<em class="property">static </em><code class="descname">forward</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.forward"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.forward" title="Permalink to this definition">¶</a></dt>
+<dd><p>Forward the page</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.get_attribute">
+<code class="descname">get_attribute</code><span class="sig-paren">(</span><em>element</em>, <em>attribute</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get value of the attribute</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>element</strong> – </li>
+<li><strong>attribute</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_cookie">
+<em class="property">static </em><code class="descname">get_cookie</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_cookie"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_cookie" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the specified browser cookie</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – cookie name</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">cookie</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_cookies">
+<em class="property">static </em><code class="descname">get_cookies</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_cookies"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_cookies" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the browser cookies</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">cookies</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.get_elememt_attribute">
+<code class="descname">get_elememt_attribute</code><span class="sig-paren">(</span><em>element</em>, <em>attribute</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_elememt_attribute"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_elememt_attribute" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the element attribute</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>element</strong> – WebElement</li>
+<li><strong>attribute</strong> – String, such as: value, class,</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">String</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_latest_window_handle">
+<em class="property">static </em><code class="descname">get_latest_window_handle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_latest_window_handle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_latest_window_handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the latest page window handle</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_main_window_handle">
+<em class="property">static </em><code class="descname">get_main_window_handle</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_main_window_handle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_main_window_handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the main page window handle</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_profile">
+<em class="property">static </em><code class="descname">get_profile</code><span class="sig-paren">(</span><em>browser_type</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_profile"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_profile" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the browser profile</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>browserType</strong> – String, values: firefox, chrome, ie, edge</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.get_text">
+<code class="descname">get_text</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_text"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_text" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the text of the element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – WebElement</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_title">
+<em class="property">static </em><code class="descname">get_title</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the browser title</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.get_url">
+<em class="property">static </em><code class="descname">get_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the webdriver url</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.get_value">
+<code class="descname">get_value</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.get_value"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.get_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the attribute value</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – WebElement</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">String</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.is_element_displayed">
+<em class="property">static </em><code class="descname">is_element_displayed</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.is_element_displayed"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.is_element_displayed" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the element is displayed</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.is_element_enabled">
+<code class="descname">is_element_enabled</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.is_element_enabled"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.is_element_enabled" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the element is enabled</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.is_element_exist">
+<code class="descname">is_element_exist</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.is_element_exist"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.is_element_exist" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check the element is exist</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.local_client">
+<code class="descname">local_client</code><span class="sig-paren">(</span><em>browser_type</em>, <em>use_cache</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.local_client"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.local_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start browser on local machine</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>browserType</strong> – String, values: firefox, chrome, ie, edge</li>
+<li><strong>useCache</strong> – Boolean, values: True, False</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.open_url">
+<em class="property">static </em><code class="descname">open_url</code><span class="sig-paren">(</span><em>url</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.open_url"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.open_url" title="Permalink to this definition">¶</a></dt>
+<dd><p>Open url</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>url</strong> – String, the url to be be opened</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.quit">
+<em class="property">static </em><code class="descname">quit</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.quit"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.quit" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close the browser</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.refresh">
+<em class="property">static </em><code class="descname">refresh</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.refresh"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.refresh" title="Permalink to this definition">¶</a></dt>
+<dd><p>Refresh the page</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.remote_client">
+<em class="property">static </em><code class="descname">remote_client</code><span class="sig-paren">(</span><em>hub_server</em>, <em>browser_type</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.remote_client"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.remote_client" title="Permalink to this definition">¶</a></dt>
+<dd><p>Start browser on the remote machine</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>hubServer</strong> – String, the ip of the remote machine which run the hub server</li>
+<li><strong>browserType</strong> – String, values: firefox, chrome, ie, edge</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.save_screenshot">
+<em class="property">static </em><code class="descname">save_screenshot</code><span class="sig-paren">(</span><em>filename</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.save_screenshot"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.save_screenshot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get the browser screenshot and save to a file</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>filename</strong> – String</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.send_combination_keys">
+<code class="descname">send_combination_keys</code><span class="sig-paren">(</span><em>element</em>, <em>majkey</em>, <em>secondarykey</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.send_combination_keys"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.send_combination_keys" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send short key to the element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>element</strong> – </li>
+<li><strong>majkey</strong> – </li>
+<li><strong>secondarykey</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.switch_window_by_handle">
+<em class="property">static </em><code class="descname">switch_window_by_handle</code><span class="sig-paren">(</span><em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.switch_window_by_handle"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.switch_window_by_handle" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch the browser page by handle</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.switch_window_by_title">
+<em class="property">static </em><code class="descname">switch_window_by_title</code><span class="sig-paren">(</span><em>title</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.switch_window_by_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.switch_window_by_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Switch the browser page by title</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>title</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.waitfor_element">
+<code class="descname">waitfor_element</code><span class="sig-paren">(</span><em>element</em>, <em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.waitfor_element"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.waitfor_element" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.waitfor_element_by_name">
+<em class="property">static </em><code class="descname">waitfor_element_by_name</code><span class="sig-paren">(</span><em>name</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.waitfor_element_by_name"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.waitfor_element_by_name" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for element by name</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>name</strong> – Element name value</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body">WebElement</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.waitfor_element_by_xpath">
+<em class="property">static </em><code class="descname">waitfor_element_by_xpath</code><span class="sig-paren">(</span><em>path</em>, <em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.waitfor_element_by_xpath"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.waitfor_element_by_xpath" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for element by xpath</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>path</strong> – element xpath</li>
+<li><strong>timeout</strong> – int(second)</li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">WebElement</p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.BrowserClient.waitfor_element_disappear">
+<code class="descname">waitfor_element_disappear</code><span class="sig-paren">(</span><em>element</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.waitfor_element_disappear"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.waitfor_element_disappear" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>element</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.waitfor_timeout">
+<em class="property">static </em><code class="descname">waitfor_timeout</code><span class="sig-paren">(</span><em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.waitfor_timeout"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.waitfor_timeout" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for timeout</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>timeout</strong> – int(seconds)</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="staticmethod">
+<dt id="selenium_helpers.BrowserClient.waitfor_title">
+<em class="property">static </em><code class="descname">waitfor_title</code><span class="sig-paren">(</span><em>title</em>, <em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#BrowserClient.waitfor_title"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.BrowserClient.waitfor_title" title="Permalink to this definition">¶</a></dt>
+<dd><p>Wait for the page title</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> – </li>
+<li><strong>timeout</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="selenium_helpers.SshTerminal">
+<em class="property">class </em><code class="descclassname">selenium_helpers.</code><code class="descname">SshTerminal</code><span class="sig-paren">(</span><em>handle</em>, <em>tm</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#SshTerminal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.SshTerminal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>SSH Terminal</p>
+<dl class="attribute">
+<dt id="selenium_helpers.SshTerminal.MAX_LINES">
+<code class="descname">MAX_LINES</code><em class="property"> = 5</em><a class="headerlink" href="#selenium_helpers.SshTerminal.MAX_LINES" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.SshTerminal.close_sshterminal">
+<code class="descname">close_sshterminal</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#SshTerminal.close_sshterminal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.SshTerminal.close_sshterminal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close ssh termianl</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.SshTerminal.m_handle">
+<code class="descname">m_handle</code><em class="property"> = ''</em><a class="headerlink" href="#selenium_helpers.SshTerminal.m_handle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.SshTerminal.m_height">
+<code class="descname">m_height</code><em class="property"> = 0</em><a class="headerlink" href="#selenium_helpers.SshTerminal.m_height" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.SshTerminal.m_terminalmanager">
+<code class="descname">m_terminalmanager</code><em class="property"> = None</em><a class="headerlink" href="#selenium_helpers.SshTerminal.m_terminalmanager" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.SshTerminal.m_width">
+<code class="descname">m_width</code><em class="property"> = 0</em><a class="headerlink" href="#selenium_helpers.SshTerminal.m_width" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.SshTerminal.run">
+<code class="descname">run</code><span class="sig-paren">(</span><em>cmd</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#SshTerminal.run"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.SshTerminal.run" title="Permalink to this definition">¶</a></dt>
+<dd><p>Run command</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>cmd</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="selenium_helpers.TerminalManager">
+<em class="property">class </em><code class="descclassname">selenium_helpers.</code><code class="descname">TerminalManager</code><a class="reference internal" href="../_modules/selenium_helpers.html#TerminalManager"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.TerminalManager" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Terinal Manager</p>
+<dl class="method">
+<dt id="selenium_helpers.TerminalManager.closeterminal">
+<code class="descname">closeterminal</code><span class="sig-paren">(</span><em>handle</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#TerminalManager.closeterminal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.TerminalManager.closeterminal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Close terminal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>handle</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.TerminalManager.getterminal">
+<code class="descname">getterminal</code><span class="sig-paren">(</span><em>title</em>, <em>timeout</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#TerminalManager.getterminal"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.TerminalManager.getterminal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get terminal</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
+<li><strong>title</strong> – </li>
+<li><strong>timeout</strong> – </li>
+</ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last"></p>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.TerminalManager.m_terminallist">
+<code class="descname">m_terminallist</code><em class="property"> = []</em><a class="headerlink" href="#selenium_helpers.TerminalManager.m_terminallist" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.TerminalManager.olderhandle">
+<code class="descname">olderhandle</code><em class="property"> = ''</em><a class="headerlink" href="#selenium_helpers.TerminalManager.olderhandle" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+</dd></dl>
+
+<dl class="class">
+<dt id="selenium_helpers.WebElement">
+<em class="property">class </em><code class="descclassname">selenium_helpers.</code><code class="descname">WebElement</code><span class="sig-paren">(</span><em>displayname</em>, <em>path</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#WebElement"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.WebElement" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.7)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Defined Web element</p>
+<dl class="attribute">
+<dt id="selenium_helpers.WebElement.DISPLAYNAME">
+<code class="descname">DISPLAYNAME</code><em class="property"> = ''</em><a class="headerlink" href="#selenium_helpers.WebElement.DISPLAYNAME" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="attribute">
+<dt id="selenium_helpers.WebElement.PATH">
+<code class="descname">PATH</code><em class="property"> = ''</em><a class="headerlink" href="#selenium_helpers.WebElement.PATH" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="method">
+<dt id="selenium_helpers.WebElement.inside">
+<code class="descname">inside</code><span class="sig-paren">(</span><em>container</em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/selenium_helpers.html#WebElement.inside"><span class="viewcode-link">[source]</span></a><a class="headerlink" href="#selenium_helpers.WebElement.inside" title="Permalink to this definition">¶</a></dt>
+<dd><p>web element inside web element</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><strong>container</strong> – </td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"></td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="web_log.html" class="btn btn-neutral float-right" title="web_log module" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="request_data.html" class="btn btn-neutral" title="request_data module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2018, DaoQ You.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../',
+            VERSION:'1.0',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="../_static/jquery.js"></script>
+      <script type="text/javascript" src="../_static/underscore.js"></script>
+      <script type="text/javascript" src="../_static/doctools.js"></script>
+
+  
+
+  <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
